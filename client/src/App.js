@@ -1,12 +1,22 @@
-import "./App.css";
-import Profile from './PortfolioContainer/Home/Profile';
-import Footer from './PortfolioContainer/Home/Footer/Footer'
+
+// eslint-disable-next-line no-unused-vars
+
+import React from 'react';
+import { PortfolioContainer } from './portfolio-container/PortfolioContainer'
+import { LoaderBar } from './utilities/commonUtils'
+import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
+
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <Profile />
-      <Footer/>
+    <div>
+     <ToastContainer />
+      <LoaderBar />
+      <PortfolioContainer />
     </div>
   );
 }
