@@ -1,5 +1,5 @@
-import { TOTAL_SCREENS } from './commonUtils';
-import { Subject } from 'rxjs';
+import {TOTAL_SCREENS} from './commonUtils';
+import {Subject} from 'rxjs';
 
 export default class ScrollService {
 
@@ -19,8 +19,13 @@ export default class ScrollService {
   scrollToHireMe = () => {
     let contactMeScreen = document.getElementById("Contact Me");
     if (!contactMeScreen) return;
-
     contactMeScreen.scrollIntoView({ behavior: "smooth" });
+  };
+
+  scrollToHome = () => {
+    let homeScreen = document.getElementById("Home");
+    if (!homeScreen) return;
+    homeScreen.scrollIntoView({ behavior: "smooth" });
   };
 
   /* CHECK IF ELEMENT IS IN VIEW */
@@ -41,9 +46,8 @@ export default class ScrollService {
         
       case "complete":
           return completelyVisible;
-    
-      default:
-          return false;
+          default:
+              return false;
     }
   };
   

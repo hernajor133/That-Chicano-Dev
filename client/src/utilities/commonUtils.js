@@ -1,11 +1,11 @@
 import Home from '../PortfolioContainer/Home/Home';
-import AboutMe from '../PortfolioContainer/AboutMe/AboutMe';
-import Resume from '../PortfolioContainer/Resume/Resume';
-import ContactMe from '../PortfolioContainer/ContactMe/ContactMe';
-import React, { useRef, useEffect } from 'react';
-import LoadingBar from 'react-top-loading-bar'
-import loaderService from '../services/loader-service/loader-service';
-import './commonUtils.css'
+// import AboutMe from '../PortfolioContainer/AboutMe/AboutMe';
+// import Resume from '../PortfolioContainer/Resume/Resume';
+// import ContactMe from '../PortfolioContainer/ContactMe/ContactMe';
+// import React, { useRef, useEffect } from 'react';
+// import LoadingBar from 'react-top-loading-bar'
+// import loaderService from '../services/loader-service/loader-service';
+// import './commonUtils.css'
 
 /* TOTAL NUMBER OF SCREENS */
 export const TOTAL_SCREENS = [
@@ -13,13 +13,13 @@ export const TOTAL_SCREENS = [
     screen_name: "Home",
     component: Home
   },
-  {
-    screen_name: "About Me",
-    component: AboutMe
-  },
-  { screen_name: "Resume", component: Resume },
+  // {
+  //   screen_name: "About Me",
+  //   component: AboutMe
+  // },
+  // { screen_name: "Resume", component: Resume },
   // { screen_name: "Portfolio", component: null },
-  { screen_name: "Contact Me", component: ContactMe }
+  // { screen_name: "Contact Me", component: ContactMe }
 ];
 
 /* GET SCREEN INDEX */
@@ -36,54 +36,54 @@ export const GET_SCREEN_INDEX = (screen_name) => {
 }
 
 /* Loading Bar Component */
-export const LoaderBar = () => {
-  const loaderReference = useRef(null);
-  const loadingBarOptions = {
-    shadow: true,
-    height: 4,
-    ref: loaderReference,
-    transitionTime: 1000,
-    className: 'loading-bar'
-  }
-  const invokeLoadingBar = () => {
-    if (!loaderReference || !loaderReference.current)
-      return;
+// export const LoaderBar = () => {
+//   const loaderReference = useRef(null);
+//   const loadingBarOptions = {
+//     shadow: true,
+//     height: 4,
+//     ref: loaderReference,
+//     transitionTime: 1000,
+//     className: 'loading-bar'
+//   }
+//   const invokeLoadingBar = () => {
+//     if (!loaderReference || !loaderReference.current)
+//       return;
 
-    loaderReference.current.continuousStart(0, 800);
-  }
+//     loaderReference.current.continuousStart(0, 800);
+//   }
 
-  const completeLoadingBarProgress = () => {
-    if (!loaderReference || !loaderReference.current)
-      return;
+//   const completeLoadingBarProgress = () => {
+//     if (!loaderReference || !loaderReference.current)
+//       return;
 
-    loaderReference.current.complete();
-  }
+//     loaderReference.current.complete();
+//   }
 
-  const loaderChangeHandler = (changeType) => {
-    switch (changeType) {
-      case "start":
-        invokeLoadingBar();
-        break;
-      case "complete":
-        completeLoadingBarProgress();
-        break;
-      default:
-        break;
-    }
-  }
+//   const loaderChangeHandler = (changeType) => {
+//     switch (changeType) {
+//       case "start":
+//         invokeLoadingBar();
+//         break;
+//       case "complete":
+//         completeLoadingBarProgress();
+//         break;
+//       default:
+//         break;
+//     }
+//   }
 
-  let loaderChangeSubscription = loaderService.loaderChangeEmitter.subscribe(loaderChangeHandler);
+//   let loaderChangeSubscription = loaderService.loaderChangeEmitter.subscribe(loaderChangeHandler);
 
-  useEffect(() => {
-    return () => {
-      /* UNSUBSCRIBE THE SUBSCRIPTIONS */
-      loaderChangeSubscription.unsubscribe();
-    }
-  }, [loaderChangeSubscription]);
+//   useEffect(() => {
+//     return () => {
+//       /* UNSUBSCRIBE THE SUBSCRIPTIONS */
+//       loaderChangeSubscription.unsubscribe();
+//     }
+//   }, [loaderChangeSubscription]);
 
-  return (
-    <div>
-      <LoadingBar {...loadingBarOptions} />
-    </div>
-  )
-}
+//   return (
+//     <div>
+//       <LoadingBar {...loadingBarOptions} />
+//     </div>
+//   )
+// }

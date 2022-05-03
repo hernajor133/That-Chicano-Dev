@@ -1,6 +1,6 @@
 import React from 'react'
 import { TOTAL_SCREENS } from '../utilities/commonUtils'
-import './PortfolioContainer.css'
+// import PortfolioContainer from './PortfolioContainer.css'
 
 export const PortfolioContainer = () => {
 

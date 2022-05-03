@@ -5,24 +5,17 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Header.css';
 
-const Header = () => {
-
-    /* STATES TO BE USED */
+export default function Header() {
     const [selectedScreen, setSelectedScreen] = useState(0);
     const [showHeaderOptions, setShowHeaderOptions] = useState(false);
 
     const updateCurrentScreen = (currentScreen) => {
         if (!currentScreen || !currentScreen.screenInView)
-            return;
-
+        return;
         let screenIndex = GET_SCREEN_INDEX(currentScreen.screenInView);
         if (screenIndex < 0)
-            return;
-
-        setSelectedScreen(screenIndex);
+        return;
     }
-
-    /* SUBSCRIPTIONS */
     let currentScreenSubscription = ScrollService.currentScreenBroadcaster.subscribe(updateCurrentScreen);
 
     const getHeaderOptions = () => {
@@ -58,13 +51,7 @@ const Header = () => {
         setShowHeaderOptions(false);
     }
 
-    useEffect(() => {
-        return () => {
-            /* UNSUBSCRIBE THE SUBSCRIPTIONS */
-            currentScreenSubscription.unsubscribe();
-        }
-    }, [currentScreenSubscription]);
-
+        // setSelectedScreen(screenIndex);
     return (
         <div className="header-container" onClick={() => setShowHeaderOptions(!showHeaderOptions)}>
             <div className="header-parent">
@@ -72,7 +59,7 @@ const Header = () => {
                     <FontAwesomeIcon className="header-hamburger-bars" icon={faBars} />
                 </div>
                 <div className="header-logo">
-                    <span>Jordi.</span>
+                    <span>JORDI</span>
                 </div>
                 <div className={(showHeaderOptions) ? "header-options show-hamburger-options" : "header-options"}>
                     {getHeaderOptions()}
@@ -80,6 +67,25 @@ const Header = () => {
             </div>
         </div>
     )
-}
 
-export default Header;
+    // useEffect(() => {
+    //     return () => {
+    //         /* UNSUBSCRIBE THE SUBSCRIPTIONS */
+    //         currentScreenSubscription.unsubscribe();
+    //     }
+    // }, [currentScreenSubscription]);
+
+}
+// const Header = () => {
+
+    
+
+    
+
+    
+
+    
+    
+// }
+
+// export default Header;
