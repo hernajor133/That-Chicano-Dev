@@ -1,7 +1,7 @@
-import Home from '../portfolio-container/Home/Home';
-import AboutMe from '../portfolio-container/AboutMe/AboutMe';
-import Resume from '../portfolio-container/Resume/Resume';
-import ContactMe from '../portfolio-container/ContactMe/ContactMe';
+import Home from '../PortfolioContainer/Home/Home';
+import AboutMe from '../PortfolioContainer/AboutMe/AboutMe';
+import Resume from '../PortfolioContainer/Resume/Resume';
+import ContactMe from '../PortfolioContainer/ContactMe/ContactMe';
 import React, { useRef, useEffect } from 'react';
 import LoadingBar from 'react-top-loading-bar'
 import loaderService from '../services/loader-service/loader-service';
