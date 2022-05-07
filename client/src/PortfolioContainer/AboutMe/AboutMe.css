@@ -65,14 +65,12 @@
     margin: 0 0 0 30px;
   }
   
-  /* IPAD PRO RESPONSIVENESS */
   @media only screen and (max-width: 1110px) {
     .about-me-parent {
       width: 88%;
     }
   }
   
-  /* MOBILE RESPONSIVENESS */
   @media only screen and (max-width: 898px) {
     .about-me-profile {
       display: none;
@@ -83,7 +81,6 @@
     }
   }
   
-  /* MOBILE RESPONSIVENESS */
   @media only screen and (max-width: 466px) {
     .about-me-options {
       display: flex;
