@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-
-import imgBack from "../../../src/images/im4.jpg";
+import imgBack from "../../../src/images/mailz.jpeg";
+// import imgBack from "../../../src/images/im4.jpg";
 import load1 from "../../../src/images/load2.gif";
 import axios from "axios";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
@@ -8,18 +8,17 @@ import { toast } from "react-toastify";
 import "./ContactMe.css";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
-import Footer from "../Footer/Footer";
+// import Footer from "../Footer/Footer";
 import Typical from "react-typical";
 
-const ContactMe = (props) => {
+export default function ContactMe(props) {
   let fadeInScreenHandler = (screen) => {
     if (screen.fadeInScreen !== props.id) return;
 
     Animations.animations.fadeInScreen(props.id);
   };
-  const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(
-    fadeInScreenHandler
-  );
+  const fadeInSubscription =
+    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -27,12 +26,12 @@ const ContactMe = (props) => {
   const [banner, setBanner] = useState("");
   const [bool, setBool] = useState(false);
 
-  useEffect(() => {
-    return () => {
-      /* UNSUBSCRIBE THE SUBSCRIPTIONS */
-      fadeInSubscription.unsubscribe();
-    };
-  }, [fadeInSubscription]);
+  // useEffect(() => {
+  //   return () => {
+  //     /* UNSUBSCRIBE THE SUBSCRIPTIONS */
+  //     fadeInSubscription.unsubscribe();
+  //   };
+  // }, [fadeInSubscription]);
 
   // handle inputs
   const handleName = (e) => {
@@ -47,7 +46,7 @@ const ContactMe = (props) => {
     setMessage(e.target.value);
   };
 
-  const formSubmit = async (e) => {
+  const submitForm = async(e) => {
     e.preventDefault();
 
     try {
@@ -81,42 +80,27 @@ const ContactMe = (props) => {
 
   return (
     <div className="main-container" id={props.id || ""}>
-      <ScreenHeading
-        subHeading={"Let's Keep In Touch"}
-        title={props.screenName ? props.screenName : ""}
-      />
+      <ScreenHeading subHeading={"Let's Keep In Touch"} title={"Contact Me"} />
       <div className="central-form">
         <div className="col">
           <h2 className="title">
-        
-
-                {" "}
-                <Typical
-                  loop={Infinity}
-                  steps={[
-                    "Get in Touch 🤝",
-                    1000,
-                    
-               
-                
-                  ]}
-                />
-            
-        </h2>
-        <a href="https://github.com/hernajor133">
-                <i className="fa fa-github-square"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/jordi-hernandez-b731b7223/">
-                <i className="fa fa-linkedin-square"></i>
-              </a>
+            {" "}
+            <Typical loop={Infinity} steps={["Get in Touch 🤝", 1000]} />
+          </h2>
+          <a href="https://github.com/hernajor133">
+            <i className="fa fa-github-square"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/jordi-hernandez-b731b7223/">
+            <i className="fa fa-linkedin-square"></i>
+          </a>
         </div>
 
         <div className="back-form">
           <div className="img-back">
             <h4>Send your message</h4>
-            <img src={imgBack} alt="" />
+            <img src={imgBack} alt="image not found" />
           </div>
-          <form onSubmit={formSubmit}>
+          <form onSubmit={submitForm}>
             <p>{banner}</p>
             <label htmlFor="name">Name</label>
             <input type="text" onChange={handleName} value={name} />
@@ -150,6 +134,6 @@ const ContactMe = (props) => {
       <Footer />
     </div>
   );
-};
+}
 
-export default ContactMe;
+// export default ContactMe;

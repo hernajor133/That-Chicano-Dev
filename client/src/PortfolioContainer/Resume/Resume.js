@@ -89,7 +89,6 @@ export default function Resume (props) {
   ];
 
   const resumeDetails = [
-    /* EDUCATION */
     <div className="resume-screen-container" key="education">
       <ResumeHeading
         heading={"Bridgeport High School"}
@@ -112,9 +111,7 @@ export default function Resume (props) {
     </div>,
     /* PROGRAMMING SKILLS */
     <div
-      className="resume-screen-container programming-skills-container"
-      key="programming-skills"
-    >
+      className="resume-screen-container programming-skills-container" key="programming-skills">
       {programmingSkillsDetails.map((skill, index) => (
         <div className="skill-parent" key={index}>
           <div className="heading-bullet"></div>
@@ -208,7 +205,7 @@ export default function Resume (props) {
 
   return (
     <div
-      className="resume-container screen-container" id={props.id || ""}>
+      className="resume-container screen-container fade-in" id={props.id || ""}>
       <div className="resume-content">
         <ScreenHeading title={"Resume"} subHeading={"My formal Bio Details"} />
         <div className="resume-card">

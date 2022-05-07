@@ -1,7 +1,7 @@
 import Home from '../PortfolioContainer/Home/Home';
 import AboutMe from '../PortfolioContainer/AboutMe/AboutMe';
 import Resume from '../PortfolioContainer/Resume/Resume';
-// import ContactMe from '../PortfolioContainer/ContactMe/ContactMe';
+import ContactMe from '../PortfolioContainer/ContactMe/ContactMe';
 // import React, { useRef, useEffect } from 'react';
 // import LoadingBar from 'react-top-loading-bar'
 // import loaderService from '../services/loader-service/loader-service';
@@ -20,6 +20,10 @@ export const TOTAL_SCREENS = [
   { 
     screen_name: "Resume", 
     component: Resume 
+  },
+  { 
+    screen_name: "ContactMe", 
+    component: ContactMe 
   },
   // { screen_name: "Portfolio", component: null },
   // { screen_name: "Contact Me", component: ContactMe }

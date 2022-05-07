@@ -185,7 +185,6 @@
   color: #ff5823;
 }
 
-/* IPAD PRO RESPONSIVENESS */
 @media only screen and (max-width: 1110px) {
   .resume-card {
     width: 880px;
@@ -196,7 +195,6 @@
   }
 }
 
-/* IPAD RESPONSIVENESS */
 @media only screen and (max-width: 1023px) {
   .resume-content {
     display: flex;
