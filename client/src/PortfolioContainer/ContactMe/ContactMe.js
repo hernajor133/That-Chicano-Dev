@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
-import imgBack from "../../../src/images/mailz.jpeg";
-// import imgBack from "../../../src/images/im4.jpg";
-import load1 from "../../../src/images/load2.gif";
+import React, { useState } from "react";
+import Typical from "react-typical";
 import axios from "axios";
-import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import { toast } from "react-toastify";
-import "./ContactMe.css";
+
+import imgBack from "../../../src/images/mailz.jpeg";
+import load1 from "../../../src/images/load2.gif";
+import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
 import Footer from "../Footer/Footer";
-import Typical from "react-typical";
+import "./ContactMe.css";
 
 export default function ContactMe(props) {
   let fadeInScreenHandler = (screen) => {
@@ -20,20 +20,13 @@ export default function ContactMe(props) {
   const fadeInSubscription =
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [banner, setBanner] = useState("");
-  const [bool, setBool] = useState(false);
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [banner, setBanner] = useState("");
+    const [bool, setBool] = useState(false);
 
-  // useEffect(() => {
-  //   return () => {
-  //     /* UNSUBSCRIBE THE SUBSCRIPTIONS */
-  //     fadeInSubscription.unsubscribe();
-  //   };
-  // }, [fadeInSubscription]);
-
-  // handle inputs
+  
   const handleName = (e) => {
     setName(e.target.value);
   };
@@ -45,8 +38,9 @@ export default function ContactMe(props) {
   const handleMessage = (e) => {
     setMessage(e.target.value);
   };
+  console.log(name);
 
-  const submitForm = async(e) => {
+  const submitForm = async(e) =>{
     e.preventDefault();
 
     try {
@@ -56,11 +50,11 @@ export default function ContactMe(props) {
         message,
       };
 
-      setBool(true);
+      setBool(true)
 
-      const res = await axios.post(`/contact`, data);
+      const res = await axios.post(`/contact`, data)
 
-      if (name.length === 0 || email.length === 0 || message.length === 0) {
+      if (name.length === 0 || email.length === 0 || message.length === 0){
         setBanner(res.data.msg);
         toast.error(res.data.msg);
         setBool(false);
@@ -118,14 +112,11 @@ export default function ContactMe(props) {
 
             <div className="send-btn">
               <button type="submit">
-                Send <i className="fa fa-paper-plane"></i>
-                {bool ? (
-                  <b className="load">
-                    <img src={load1} alt="load1" />
-                  </b>
-                ) : (
-                  ""
-                )}
+                Send
+                <i className="fa fa-paper-plane" />
+                {bool?(<b className="load">
+                  <img src={load1} alt="load1" />
+                </b>):("")}
               </button>
             </div>
           </form>
