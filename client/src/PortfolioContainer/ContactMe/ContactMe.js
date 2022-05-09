@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import "./ContactMe.css";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
-// import Footer from "../Footer/Footer";
+import Footer from "../Footer/Footer";
 import Typical from "react-typical";
 
 export default function ContactMe(props) {
@@ -98,7 +98,7 @@ export default function ContactMe(props) {
         <div className="back-form">
           <div className="img-back">
             <h4>Send your message</h4>
-            <img src={imgBack} alt="image not found" />
+            <img src={imgBack} alt="not found" />
           </div>
           <form onSubmit={submitForm}>
             <p>{banner}</p>

@@ -19,7 +19,7 @@ router.post('/contact',(req,res) => {
         let mailOptions = {
             from: data.email,
             to: 'jordihernandez@gmail.com',
-            subject: `message from $(data.name)`,
+            subject: `message from ${data.name}`,
             html:`
             
             <h3>Information<h3/>

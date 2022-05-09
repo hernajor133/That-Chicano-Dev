@@ -1,5 +1,6 @@
 import React from "react";
 import Typical from "react-typical";
+
 import "./Profile.css"
 
 export default function Profile() {
@@ -52,7 +53,7 @@ export default function Profile() {
             </span>
           </div>
           <div className="profile-options">
-            <button className="btn primary-btn" onClick={() => ScrollService.scrollHandler.scrollToHireMe()}> Hire Me </button>
+            <button className="btn primary-btn" > Hire Me </button>
             <a
               href="Web-Developer-Resume2022.pdf"
               download="Web-Developer-Resume2022.pdf"
@@ -61,9 +62,9 @@ export default function Profile() {
             </a>
           </div>
         </div>
-        <dive className="profile-picture">
+        <div className="profile-picture">
           <div className="profile-picture-background"></div>
-        </dive>
+        </div>
       </div>
     </div>
   );

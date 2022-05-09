@@ -2,7 +2,7 @@ import React from 'react'
 import { TOTAL_SCREENS } from '../utilities/commonUtils'
 // import PortfolioContainer from './PortfolioContainer.css'
 
-export const PortfolioContainer = () => {
+export default function PortfolioContainer() {
 
     const mapAllScreens = () => {
         return (
@@ -14,7 +14,7 @@ export const PortfolioContainer = () => {
 
     return (
         <div className="portfolio-container">
-            { mapAllScreens() }
+            {mapAllScreens()}
         </div>
     )
 }
